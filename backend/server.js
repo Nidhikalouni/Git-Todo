@@ -8,7 +8,7 @@ app.use(express.json());
 
 await connectDB();
 
-// API ROUTES FIRST
+// API ROUTES FIRSTcl
 app.use("/api", todoRoutes);
 
 // HOME ROUTE LAST
