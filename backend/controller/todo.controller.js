@@ -22,11 +22,14 @@ export const updateTodo = async(req,res)=>{
   try {
 
     const {id} = req.params
+   
     const todoData = await Todo.findById(id)
+    
     if(!todoData){
       return res.json({success:false,message:"Task not found"})
     }
     const updatedData = await Todo.findByIdAndUpdate(id,req.body,{new:true})   
+   
     return res.json({success:true,updatedData,message:"Data updated successfully!"})
 
   } catch (error) {
